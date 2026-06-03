@@ -5,4 +5,4 @@ if (-Not (Test-Path -Path ".venv")) {
 }
 & ".\.venv\Scripts\Activate.ps1"
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn main:app --reload --port 8001

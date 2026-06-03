@@ -9,7 +9,7 @@ interface FuelMixChartProps {
 
 export function FuelMixChartWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-full aspect-[4/3] min-h-[192px] relative">
+    <div className="w-full h-full min-h-[192px] relative">
       <div className="absolute inset-0">
         {children}
       </div>
@@ -20,7 +20,7 @@ export function FuelMixChartWrapper({ children }: { children: React.ReactNode })
 export default function FuelMixChart({ data, colors }: FuelMixChartProps) {
   return (
     <FuelMixChartWrapper>
-      <ResponsiveContainer width="100%" height="100%" debounce={100}>
+      <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={192} debounce={50}>
         <PieChart>
           <Pie
             data={data}

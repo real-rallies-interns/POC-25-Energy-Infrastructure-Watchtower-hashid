@@ -29,11 +29,17 @@ export default function Home() {
     
     const fetchData = async () => {
       try {
+        const fetchJson = async (url: string) => {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+          return res.json();
+        };
+
         const [plantsRes, mixRes, outagesRes, intRes] = await Promise.all([
-          fetch("http://localhost:8000/api/plants").then(r => r.json()),
-          fetch("http://localhost:8000/api/fuel-mix").then(r => r.json()),
-          fetch("http://localhost:8000/api/outages").then(r => r.json()),
-          fetch("http://localhost:8000/api/intelligence").then(r => r.json())
+          fetchJson("http://localhost:8001/api/plants"),
+          fetchJson("http://localhost:8001/api/fuel-mix"),
+          fetchJson("http://localhost:8001/api/outages"),
+          fetchJson("http://localhost:8001/api/intelligence")
         ]);
         setPlants(plantsRes);
         setFuelMix(mixRes);
@@ -150,9 +156,13 @@ export default function Home() {
           {/* Section D: Fuel Mix Chart */}
           <div className="p-6 border-b border-[#1F2937]">
             <IntelligenceLabel>Current Fuel Mix</IntelligenceLabel>
-            {mounted && fuelMix?.mix && (
-              <FuelMixChart data={fuelMix.mix} colors={COLORS} />
-            )}
+            {/* Explicit height wrapper — ensures ResponsiveContainer always
+                has a measurable bounding box and never fires width/height=-1 */}
+            <div className="w-full h-48 min-h-[192px]">
+              {mounted && fuelMix?.mix && (
+                <FuelMixChart data={fuelMix.mix} colors={COLORS} />
+              )}
+            </div>
             {/* Legend */}
             <div className="flex flex-wrap gap-2 mt-2">
               {fuelMix?.mix?.map((entry: any, index: number) => (
