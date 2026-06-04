@@ -1,0 +1,221 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-115.1728, 36.1699] },
+      "properties": {
+        "id": "plant_1",
+        "name": "Mojave Solar Array",
+        "fuel_type": "Solar",
+        "capacity_mw": 250,
+        "region": "Southwest",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-95.3698, 29.7604] },
+      "properties": {
+        "id": "plant_2",
+        "name": "Gulf Coast Wind Farm",
+        "fuel_type": "Wind",
+        "capacity_mw": 180,
+        "region": "South",
+        "status": "Maintenance"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-104.9903, 39.7392] },
+      "properties": {
+        "id": "plant_3",
+        "name": "Rocky Mountain Gas Plant",
+        "fuel_type": "Gas",
+        "capacity_mw": 420,
+        "region": "Mountain West",
+        "status": "Outage"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-97.5164, 35.4676] },
+      "properties": {
+        "id": "plant_4",
+        "name": "Oklahoma Wind Corridor",
+        "fuel_type": "Wind",
+        "capacity_mw": 310,
+        "region": "Midwest",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-120.5015, 37.3382] },
+      "properties": {
+        "id": "plant_5",
+        "name": "Central Valley Solar Farm",
+        "fuel_type": "Solar",
+        "capacity_mw": 195,
+        "region": "West Coast",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6298, 41.8781] },
+      "properties": {
+        "id": "plant_6",
+        "name": "Great Lakes Gas Station",
+        "fuel_type": "Gas",
+        "capacity_mw": 550,
+        "region": "Midwest",
+        "status": "Maintenance"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-106.6504, 35.0844] },
+      "properties": {
+        "id": "plant_7",
+        "name": "Rio Grande Solar Hub",
+        "fuel_type": "Solar",
+        "capacity_mw": 340,
+        "region": "Southwest",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-100.7902, 46.8772] },
+      "properties": {
+        "id": "plant_8",
+        "name": "Dakota Prairie Wind Park",
+        "fuel_type": "Wind",
+        "capacity_mw": 275,
+        "region": "Northern Plains",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-74.006, 40.7128] },
+      "properties": {
+        "id": "plant_9",
+        "name": "Northeast Gas Turbine Complex",
+        "fuel_type": "Gas",
+        "capacity_mw": 680,
+        "region": "Northeast",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-122.4194, 37.7749] },
+      "properties": {
+        "id": "plant_10",
+        "name": "Bay Area Offshore Wind",
+        "fuel_type": "Wind",
+        "capacity_mw": 220,
+        "region": "West Coast",
+        "status": "Maintenance"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-81.3792, 28.5383] },
+      "properties": {
+        "id": "plant_11",
+        "name": "Florida Sunbelt Solar Station",
+        "fuel_type": "Solar",
+        "capacity_mw": 160,
+        "region": "Southeast",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-93.265, 44.9778] },
+      "properties": {
+        "id": "plant_12",
+        "name": "Twin Cities Peaker Gas Plant",
+        "fuel_type": "Gas",
+        "capacity_mw": 490,
+        "region": "Midwest",
+        "status": "Outage"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-111.891, 40.7608] },
+      "properties": {
+        "id": "plant_13",
+        "name": "Bonneville Wind Ridge",
+        "fuel_type": "Wind",
+        "capacity_mw": 380,
+        "region": "Mountain West",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-112.074, 33.4484] },
+      "properties": {
+        "id": "plant_14",
+        "name": "Sonoran Desert Solar Plant",
+        "fuel_type": "Solar",
+        "capacity_mw": 415,
+        "region": "Southwest",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-90.1994, 38.627] },
+      "properties": {
+        "id": "plant_15",
+        "name": "Mississippi River Gas Facility",
+        "fuel_type": "Gas",
+        "capacity_mw": 600,
+        "region": "Midwest",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-79.3832, 43.6532] },
+      "properties": {
+        "id": "plant_16",
+        "name": "Ontario Lake Wind Array",
+        "fuel_type": "Wind",
+        "capacity_mw": 145,
+        "region": "Canada East",
+        "status": "Operational"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-114.0719, 51.0447] },
+      "properties": {
+        "id": "plant_17",
+        "name": "Alberta Foothills Gas Station",
+        "fuel_type": "Gas",
+        "capacity_mw": 730,
+        "region": "Canada West",
+        "status": "Maintenance"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-99.1332, 19.4326] },
+      "properties": {
+        "id": "plant_18",
+        "name": "Mexico City Solar Corridor",
+        "fuel_type": "Solar",
+        "capacity_mw": 285,
+        "region": "Mexico Central",
+        "status": "Operational"
+      }
+    }
+  ]
+}
