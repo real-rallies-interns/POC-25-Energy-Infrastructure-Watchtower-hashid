@@ -217,5 +217,26 @@
         "status": "Operational"
       }
     }
-  ]
+  ],
+  "fuel_mix_baselines": [
+    { "source": "Natural Gas", "base_percentage": 39, "category": "Brown" },
+    { "source": "Nuclear",     "base_percentage": 19, "category": "Green" },
+    { "source": "Coal",        "base_percentage": 18, "category": "Brown" },
+    { "source": "Wind",        "base_percentage": 11, "category": "Green" },
+    { "source": "Hydro",       "base_percentage":  6, "category": "Green" },
+    { "source": "Solar",       "base_percentage":  4, "category": "Green" },
+    { "source": "Other",       "base_percentage":  3, "category": "Brown" }
+  ],
+  "outage_event_types": [
+    "Thermal trip",
+    "Grid frequency drop",
+    "Substation maintenance",
+    "Transmission line derating",
+    "Inverter failure",
+    "Turbine vibration alert"
+  ],
+  "intelligence": {
+    "insight_a": "Energy is the Foundation of Economic Growth—an unstable or carbon-heavy grid is a long-term risk to capital.",
+    "insight_b": "The Ministry of Power, Grid Operators (ISOs/RTOs), and utility companies manage the physical assets."
+  }
 }

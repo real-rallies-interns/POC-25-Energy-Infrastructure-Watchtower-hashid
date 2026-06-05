@@ -23,10 +23,16 @@ app.add_middleware(
 DATA_FILE = Path(__file__).parent / "data.json"
 
 
-def _load_geojson() -> dict:
-    """Read and return the GeoJSON FeatureCollection from data.json."""
+def _load_data() -> dict:
+    """Read and return the full data.json document."""
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def _load_geojson() -> dict:
+    """Return only the GeoJSON FeatureCollection portion of data.json."""
+    data = _load_data()
+    return {"type": data["type"], "features": data["features"]}
 
 
 # ---------------------------------------------------------------------------
@@ -36,22 +42,14 @@ _ISO_NAMES = ["ERCOT", "CAISO", "PJM", "NYISO", "SPP", "MISO", "IESO"]
 
 
 def _build_fuel_mix() -> dict:
-    """Weighted fuel mix representing a North American baseline."""
-    sources = [
-        ("Natural Gas", 39, "Brown"),
-        ("Nuclear",     19, "Green"),
-        ("Coal",        18, "Brown"),
-        ("Wind",        11, "Green"),
-        ("Hydro",        6, "Green"),
-        ("Solar",        4, "Green"),
-        ("Other",        3, "Brown"),
-    ]
+    """Weighted fuel mix built from baselines stored in data.json."""
+    baselines = _load_data()["fuel_mix_baselines"]
 
     mix = []
     total = 0
-    for source, base, category in sources:
-        val = max(1, base + random.randint(-2, 2))
-        mix.append({"source": source, "percentage": val, "category": category})
+    for entry in baselines:
+        val = max(1, entry["base_percentage"] + random.randint(-2, 2))
+        mix.append({"source": entry["source"], "percentage": val, "category": entry["category"]})
         total += val
 
     # Normalize to 100 %
@@ -71,11 +69,8 @@ def _build_fuel_mix() -> dict:
 
 
 def _build_outages() -> list:
-    """Generate a random set of live outage events."""
-    events = [
-        "Thermal trip", "Grid frequency drop", "Substation maintenance",
-        "Transmission line derating", "Inverter failure", "Turbine vibration alert",
-    ]
+    """Generate a random set of live outage events using event types from data.json."""
+    events = _load_data()["outage_event_types"]
     outages = []
     for i in range(random.randint(5, 10)):
         severity = random.choices(["High", "Medium", "Low"], weights=[15, 35, 50])[0]
@@ -115,16 +110,8 @@ def get_outages():
 
 @app.get("/api/intelligence")
 def get_intelligence():
-    return {
-        "insight_a": (
-            "Energy is the Foundation of Economic Growth—an unstable or "
-            "carbon-heavy grid is a long-term risk to capital."
-        ),
-        "insight_b": (
-            "The Ministry of Power, Grid Operators (ISOs/RTOs), and utility "
-            "companies manage the physical assets."
-        ),
-    }
+    """Return intelligence insights loaded from data.json."""
+    return _load_data()["intelligence"]
 
 
 if __name__ == "__main__":
